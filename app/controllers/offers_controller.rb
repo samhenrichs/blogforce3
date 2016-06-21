@@ -5,20 +5,36 @@ class OffersController < ApplicationController
   # GET /offers.json
   def index
     @offers = Offer.all
+    if user_signed_in?
+    else
+      redirect_to "/users/sign_in"
+    end
   end
 
   # GET /offers/1
   # GET /offers/1.json
   def show
+    if user_signed_in?
+    else
+      redirect_to "/users/sign_in"
+    end
   end
 
   # GET /offers/new
   def new
     @offer = Offer.new
+    if user_signed_in?
+    else
+      redirect_to "/users/sign_in"
+    end
   end
 
   # GET /offers/1/edit
   def edit
+    if user_signed_in?
+    else
+      redirect_to "/users/sign_in"
+    end
   end
 
   # POST /offers
@@ -35,6 +51,10 @@ class OffersController < ApplicationController
         format.json { render json: @offer.errors, status: :unprocessable_entity }
       end
     end
+    if user_signed_in?
+    else
+      redirect_to "/users/sign_in"
+    end
   end
 
   # PATCH/PUT /offers/1
@@ -48,6 +68,10 @@ class OffersController < ApplicationController
         format.html { render :edit }
         format.json { render json: @offer.errors, status: :unprocessable_entity }
       end
+    end
+    if user_signed_in?
+    else
+      redirect_to "/users/sign_in"
     end
   end
 

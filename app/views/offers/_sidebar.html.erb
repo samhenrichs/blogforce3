@@ -10,7 +10,7 @@
 					<span class="logo">blog/force</span>
 				</div>
 			</div>
-
+			<br>
 			<div class="user">
 				<div class="image"></div>
 				<div class="user-info">
@@ -18,7 +18,7 @@
 					<div class="description">Description.</div>
 				</div>
 			</div>
-
+			<br>
 			<div class="bar-line"></div>
 			<br>
 			<div class="centered">
@@ -34,7 +34,9 @@
 			</div>
 
 			<div class="bottom">
-				
+				<%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+				<div class="margin"></div>
+				<a href="/users/edit" class="bottom-links">Settings</a>
 			</div>
 
 

@@ -1,6 +1,9 @@
 <%= render 'sidebar' %>
 <div class="container-offers">
-  <h2>OFFERS</h2>
+  
+  <div class="fifty">
+    <h2>OFFERS</h2>
+  </div>
     
     <div class="space"></div>
 
@@ -9,7 +12,7 @@
         <div class="offer">
           
           <div class="offer-header"> 
-            <h3 class="text-center normal"><%= offer.title %></h3>
+            <h3 class="text-center"><%= offer.title %></h3>
           </div>
 
           <div class="offer-body">
@@ -32,7 +35,7 @@
               <%= link_to 'More Info', offer %>
             <% end %>
           </div>
-          
+
         </div>
 
     <% end %>

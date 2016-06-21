@@ -5,20 +5,36 @@ class CampaignsController < ApplicationController
   # GET /campaigns.json
   def index
     @campaigns = Campaign.all
+    if user_signed_in?
+    else
+      redirect_to "/users/sign_in"
+    end
   end
 
   # GET /campaigns/1
   # GET /campaigns/1.json
   def show
+    if user_signed_in?
+    else
+      redirect_to "/users/sign_in"
+    end
   end
 
   # GET /campaigns/new
   def new
     @campaign = Campaign.new
+    if user_signed_in?
+    else
+      redirect_to "/users/sign_in"
+    end
   end
 
   # GET /campaigns/1/edit
   def edit
+    if user_signed_in?
+    else
+      redirect_to "/users/sign_in"
+    end
   end
 
   # POST /campaigns
@@ -35,6 +51,10 @@ class CampaignsController < ApplicationController
         format.json { render json: @campaign.errors, status: :unprocessable_entity }
       end
     end
+    if user_signed_in?
+    else
+      redirect_to "/users/sign_in"
+    end
   end
 
   # PATCH/PUT /campaigns/1
@@ -48,6 +68,10 @@ class CampaignsController < ApplicationController
         format.html { render :edit }
         format.json { render json: @campaign.errors, status: :unprocessable_entity }
       end
+    end
+    if user_signed_in?
+    else
+      redirect_to "/users/sign_in"
     end
   end
 
