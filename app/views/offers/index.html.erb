@@ -1,0 +1,49 @@
+<%= render 'sidebar' %>
+<div class="container-offers">
+  <h2>OFFERS</h2>
+    
+    <div class="space"></div>
+
+    <% @offers.each do |offer| %>
+
+        <div class="offer">
+          
+          <div class="offer-header"> 
+            <h3 class="text-center normal"><%= offer.title %></h3>
+          </div>
+
+          <div class="offer-body">
+            <br>
+            <%= offer.name %>
+            <br>
+            <%= truncate(offer.description, length: 37) %>
+            <br>
+            <%= offer.url %>
+            <br>
+            <%= offer.product %>
+            <br>
+            <%= offer.place %>
+            <br>
+            <% if current_user.try(:email) == "sbhenrichs@gmail.com" %>
+              <%= link_to 'More Info', offer %>&nbsp;&nbsp;
+              <%= link_to 'Update', edit_offer_path(offer) %>&nbsp;&nbsp;
+              <%= link_to 'Delete', offer, method: :delete, data: { confirm: 'Are you sure?' } %>&nbsp;&nbsp;
+            <% else %>
+              <%= link_to 'More Info', offer %>
+            <% end %>
+          </div>
+          
+        </div>
+
+    <% end %>
+
+<br>
+
+  <div class="space">
+    <% if current_user.email == "sbhenrichs@gmail.com" %>
+      <%= link_to 'New Offer', new_offer_path %>
+    <% else %>
+    <% end %>
+  </div>
+
+</div>
