@@ -16,6 +16,10 @@
         <%= f.email_field :email, autofocus: true, class: "form-control" %>
       </div>
       <div class="form-group">
+        <h3 class="text-center">Website</h3><br>
+        <%= f.url_field :url, class: "form-control" %>
+      </div>
+      <div class="form-group">
         <h3 class="text-center">Password</h3>
         <% if @minimum_password_length %>
           <em class="sans-serif">(<%= @minimum_password_length %> characters minimum)</em>
@@ -28,8 +32,9 @@
           <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
         </div>
       </div>
+      <br>
       <div class="form-group">
-        <%= f.submit "Sign Up", class: "btn btn-default" %>
+        <%= f.submit "Sign Up", class: "btn btn-default font" %>
       </div>
       
       <% end %>

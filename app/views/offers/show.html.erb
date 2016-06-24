@@ -1,40 +1,38 @@
 <%= render 'sidebar' %>
 
-<div class="container-offers">
+<div class="container-offers font black">
 
-  <p id="notice"><%= notice %></p>
+  <br>
+  <h1 class="text-center blue"><%= @offer.name %></h1>
+  <br>
+  <div class="larger">
+    <p>
+      <%= @offer.description %>
+    </p>
+    <br>
+    <p>
+      <a href="<%= @offer.url %>" class="blue">View product in Amazon.</a>
+    </p>
+    <br>
+    <% if @offer.product == true %>
+      <p>Want a sample of the product? <a href="/pages/product">Learn more.</a></p>
+    <% end %>
+    <br>
+    <% if current_user.try(:email) == "sbhenrichs@gmail.com" || "camblackwell2@gmail.com" %>
+      <%= link_to 'Edit', edit_offer_path(@offer) %> |
+      <%= link_to 'Back', offers_path %>
+    <% else %>
+      <%= link_to 'Back', offers_path %>
+    <% end %>
+  </div>
 
-  <p>
-    <strong>Title:</strong>
-    <%= @offer.title %>
-  </p>
-
-  <p>
-    <strong>Name:</strong>
-    <%= @offer.name %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= @offer.description %>
-  </p>
-
-  <p>
-    <strong>Url:</strong>
-    <%= @offer.url %>
-  </p>
-
-  <p>
-    <strong>Product:</strong>
-    <%= @offer.product %>
-  </p>
-
-  <p>
-    <strong>Place:</strong>
-    <%= @offer.place %>
-  </p>
-
-  <%= link_to 'Edit', edit_offer_path(@offer) %> |
-  <%= link_to 'Back', offers_path %>
+  <%= form_for :push, url: pushes_path do |f| %>
+    <%= f.hidden_field :name, value: @offer.name %>
+    <%= f.hidden_field :description, value: @offer.description %>
+    <%= f.hidden_field :date, value: Date.today.to_s %>
+    <%= f.hidden_field :url, value: @offer.url %>
+    <%= f.hidden_field :owner, value: current_user.try(:email) %>
+    <%= f.submit :"Create Campaign", class: "btn btn-info" %>
+  <% end %>
   
 </div>

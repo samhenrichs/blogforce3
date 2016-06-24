@@ -1,0 +1,37 @@
+<%= render 'sidebar' %>
+<div class="container-offers">
+<br>
+<h1 class="text-center blue">Campaigns for <%= current_user.try(:email) %></h1>
+<br>
+    <% @pushes.each do |push| %>
+      <% if push.owner == current_user.try(:email) || current_user.try(:email) == "sbhenrichs@gmail.com" %>
+        
+        <h3 class="text-center blue"><%= push.name %></h3>
+        <br>
+        <%= truncate(push.description, length: 250) %>
+        <br>
+        <%= push.owner %>
+        <br>
+        <%= push.date %>
+        <br>
+        <%= link_to 'More Info', push %> 
+        <% if current_user.email == "sbhenrichs@gmail.com" %>
+        <span> | </span>
+        <%= link_to 'Edit', edit_push_path(push) %> <span> | </span>
+        <%= link_to 'Destroy', push, method: :delete, data: { confirm: 'Are you sure?' }
+         %> 
+        <% end %>
+        <br>
+        <br>
+
+      <% end %>
+      
+    <% end %>
+
+    <br>
+    <br>
+    <br>
+    <% if current_user.email == "sbhenrichs@gmail.com" %>
+    <%= link_to 'New Push', new_push_path %>
+    <% end %>
+</div>

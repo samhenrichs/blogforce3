@@ -1,0 +1,27 @@
+<%= form_for @push do |f| %>
+
+	  <div class="field">
+	  <%= f.label :name %><br>
+	  <%= f.text_field :name %>
+	  </div>
+	  <div class="field">
+	    <%= f.label :description %><br>
+	    <%= f.text_area :description %>
+	  </div>
+	  <div class="field">
+	    <%= f.label :date %><br>
+	    <%= f.text_field :date, value: Date.today.to_s %>
+	  </div>
+	  <div class="field">
+	    <%= f.label :url %><br>
+	    <%= f.url_field :url %>
+	  </div>
+	  <div class="field">
+	    <%= f.label :owner %><br>
+	    <%= f.text_field :owner, value: current_user.try(:email) %>
+	  </div>
+	  <div class="actions">
+	    <%= f.submit %>
+	  </div>
+
+<% end %>

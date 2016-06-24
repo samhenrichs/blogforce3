@@ -1,5 +1,5 @@
 @import 'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,700,800';
-
+$blue: #58ACFA;
 html, head, body {
 	margin: 0px;
 	padding: 0px;
@@ -66,3 +66,11 @@ a:hover {
 .larger {
 	font-size: 115%;
 }
+.blue {
+	color: $blue;
+}
+
+
+
+
+

@@ -5,11 +5,12 @@ $blue:#58ACFA;
 html, head, body {
 	padding: 0px;
 	margin: 0px;
-	font-family: "Open Sans";
+	font-family: "Open Sans", sans-serif;
 }
 html {
 	position: relative;
 	min-height: 100%;
+	transition-timing-function: ease-in-out;
 }
 body {
 	marign: 0 0 100px;
@@ -17,11 +18,15 @@ body {
 .sidebar {
 	height: 100vh;
 	width: 250px;
-	background-color: #FAFAFA;
+	background-color: #F2F2F2;
 	float: left;
-	position: absolute;
+	position: fixed;
 	left: 0;
 }
+.logo-c {
+	font-size: 25px;
+	font-weight: lighter;
+}s
 .image {
 	height: 50px;
 	width: 50px;
@@ -36,11 +41,14 @@ body {
 .user-info {
 	display: inline-block;
 	vertical-align: middle;
+	text-align: center;
 }
 .name {
 	display: block;
 	margin-left: 10px;
 	vertical-align: bottom;
+	font-size: 125%;
+	font-weight: lighter;
 }
 .description {
 	display: block;
@@ -64,6 +72,9 @@ body {
 	width: 100%;
 	text-align: center;
 	display: table;
+}
+.tag {
+	font-size: 70%;
 }
 .logo-c {
 	color: white;
@@ -102,20 +113,25 @@ h1, h2, h3, h4, h5, h6 {
 	text-decoration: none;
 }
 .offer {
-	background-color: #eee;
-	border-radius: 5px;
+	background-color: #F2F2F2;
+	border-radius: 3px;
 	width: 350px;
-	display: inline-block;
+	display: inline;
+	float: left;
 	margin-right: 50px;
+	margin-bottom: 50px;
 }
 .offer-header {
 	background-color: $blue;
 	padding: 15px;
 	width: 100%;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
 	color: white;
 	font-weight: normal;
+}
+.new-offer {
+	clear: both;
 }
 .normal {
 	font-weight: normal;
@@ -123,6 +139,8 @@ h1, h2, h3, h4, h5, h6 {
 .offer-body {
 	padding: 20px;
 	margin-top: -20px;
+	display: inline;
+	float: left;
 }
 .bar-link-c {
 	margin-top: 15px;
@@ -139,21 +157,29 @@ h1, h2, h3, h4, h5, h6 {
 	padding: 20px;
 	font-size: 115%;
 	font-weight: lighter;
-	border-top: 1px solid #eee;	
+	border-top: 1px solid #BDBDBD;	
 }
 .margin {
 	margin-top: 15px;
 }
-
-
-
-
-
-
-
-
-
-
+.blue {
+	color: #58ACFA;
+}
+.font {
+	font-family: "Open Sans", sans-serif;
+}
+.light {
+	font-weight: lighter;
+}
+.black {
+	color: black;
+}
+.larger {
+	font-size: 115%;
+}
+a {
+	color: #58ACFA;
+}
 
 
 

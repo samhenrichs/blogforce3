@@ -3067,7 +3067,6 @@ fieldset[disabled] a.btn {
   color: #ffffff;
   background-color: #95a5a6;
   border-color: #95a5a6;
-  font-family: sans-serif;
 }
 .btn-default:focus,
 .btn-default.focus {
@@ -3236,7 +3235,7 @@ fieldset[disabled] .btn-success.focus {
   background-color: #ffffff;
 }
 .btn-info {
-  color: #ffffff;
+  color: white;
   background-color: #58ACFA;
   border-color: #58ACFA;
 }
@@ -7047,5 +7046,4 @@ h1, h2, h3, h4, h5, h6 {
 .space {
   margin-top: 25px;
 }
-
 

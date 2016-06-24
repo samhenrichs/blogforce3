@@ -1,0 +1,27 @@
+<%= render 'sidebar' %>
+  
+  <div class="container-offers">
+    <h1 class="text-center blue"><%= @push.name %></h1>
+    
+    <br>
+
+    <div class="larger">
+      <p>
+        <%= @push.description %>
+      </p>
+      <p>
+        <span>Owner<% if current_user.email != "sbhenrichs@gmail.com" %> (you):<% else %>:<% end %></span>
+        <%= current_user.email %>
+      </p>
+      <p>
+        <%= link_to 'Back', pushes_path %>
+      </p>
+    </div>
+    
+    <div class="text-center">
+      <div class="btn btn-danger">
+        <%= link_to "End Campaign", push_path(@push), class: "white", method: :delete, data: { confirm: "When you end a campaign, you will be paid, but you won't recieve any more money from your sales. Are you sure you want to do this?"} %>          
+      </div>
+    </div>
+
+  </div>
