@@ -10,17 +10,20 @@ html, head, body {
 	width: 90%;
 	margin-left: 5%;
 	margin-top: 25px;
+	height: 50px;
 }
 .float-left {
 	float: left;
 	display: inline-block;
-	vertical-align: middle;
+	line-height: 50px;
 }
 .brandr {
 	font-size: 125%;
 }
 .float-right {
 	float: right;
+	display: inline-block;
+	line-height: 50px;
 }
 .link {
 	margin-left: 10px;
@@ -69,7 +72,36 @@ a:hover {
 .blue {
 	color: $blue;
 }
-
+#list {
+	display: none;
+}
+.dropdown-toggle {
+	width: 25px;
+	height: 25px;
+	background-color: #eee;
+	clear: both;
+}
+@media (max-width: 450px) {
+	#line {
+		display: none;
+	}
+	#list {
+		float: left;
+		line-height: 1.5;
+		clear: both;
+	}
+	.float-right {
+		float: left;
+		display: block;
+		margin-left: -50px;
+	}
+	ul {
+		list-style-type: none;
+	}
+	.dropdown-toggle {
+		display: block;
+	}
+}
 
 
 
