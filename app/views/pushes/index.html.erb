@@ -1,7 +1,8 @@
-<%= render 'sidebar' %>
 <div class="container-offers">
-<br>
-<h1 class="text-center blue">Campaigns for <%= current_user.try(:email) %></h1>
+<div class="fifty">
+    <h2 class="uppercase">Campaigns</h2>
+    <h4>(<%= current_user.email %>)</h4>
+</div>
 <br>
     <% @pushes.each do |push| %>
       <% if push.owner == current_user.try(:email) || current_user.try(:email) == "sbhenrichs@gmail.com" %>

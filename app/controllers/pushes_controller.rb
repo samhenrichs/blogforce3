@@ -4,7 +4,7 @@ class PushesController < ApplicationController
   # GET /pushes
   # GET /pushes.json
   def index
-    @pushes = Push.all
+    @pushes = Push.all.order("created_at DESC")
   end
 
   # GET /pushes/1

@@ -3,12 +3,10 @@
 		
 	</head>
 	<body>
-	<%= render 'sidebar' %>
-		<div class="container-offers">
-			<h1 class="text-center blue">Your Account</h1>
+			<h3 class="text-center blue">Your Account</h3>
 			<br>
-			<h3>Email: <%= current_user.try(:email) %></h3>
-			<h3>Website: <a href="<%= current_user.url %>"><%= current_user.url %></a></h3>
+			<h4>Email: <%= current_user.try(:email) %></h4>
+			<h4>Website: <a href="<%= current_user.url %>"><%= current_user.url %></a></h4>
 			<br>
 			<br>
 			<div class="col-lg-6 text-center">
@@ -16,11 +14,12 @@
 					<span class="white">Your Campaigns</span>
 				</a>
 			</div>
+			<br>
+			<br>
 			<div class="col-lg-6 text-center">
 				<a href="/offers" class="btn btn-info">
 					<span class="white">Find a Campaign</span>
 				</a>
 			</div>
-		</div>
 	</body>
 </html>

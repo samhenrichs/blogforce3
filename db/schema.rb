@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160623024138) do
+ActiveRecord::Schema.define(version: 20160628112525) do
 
   create_table "campaigns", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20160623024138) do
     t.text     "description"
     t.string   "url"
     t.string   "owner"
-    t.date "date"
+    t.datetime "date"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "user_id"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 20160623024138) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "url"
+    t.boolean  "popup"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

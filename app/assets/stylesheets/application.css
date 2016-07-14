@@ -1,15 +1,122 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+/* Universal */
+* {
+	font-family: "Roboto", sans-serif;
+}
+h1, h2 , h3, h4 , h5, h6 {
+	font-weight: lighter;
+	margin: 0px;
+}
+a, a:visited {
+	text-decoration: none;
+}
+/* Navbar */
+.navbar {
+	border-radius: 0px;
+	height: 70px;
+	width: 100vw;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background-color: #3c3c3c;
+}
+.brand {
+	display: inline-block;
+	line-height: 70px;
+	font-size: 200%;
+	display: inline-block;
+	margin-left: 20px;
+  color: #d85f65;
+  font-weight: 100;
+}
+.right-links {
+	float: right;
+	display: inline-block;
+	margin-right: 50px;
+	line-height: 70px;
+  font-size: 95%;
+}
+.hac, .hac:visited {
+  margin-left: 25px;
+  color: #949494;
+  text-decoration: none;
+  transition: 250ms ease-in-out;
+  font-weight: 100;
+  text-transform: uppercase;
+}
+.hac:hover, .hac:active {
+  color: white;
+}
+.btn-sign-in, .btn-sign-in:visited {
+  color: #949494;
+  padding: 7.5px 30px 7.5px 30px;
+  border-radius: 2.5px;
+  border: 1px solid #949494;
+  text-decoration: none;
+  margin-left: 25px;
+  font-size: 90%;
+  text-transform: uppercase;
+}
+.btn-sign-in:hover, .btn-sign-in:active {
+  color: black;
+  background-color: white;
+  border-color: white;
+}
+.btn-sign-up {
+  color: #d85f65;
+  padding: 7.5px 30px 7.5px 30px;
+  border-radius: 2.5px;
+  border: 1px solid #d85f65;
+  text-decoration: none;
+  margin-left: 25px;
+  font-size: 90%;
+  text-transform: uppercase;
+}
+.btn-sign-up:hover, .btn-sign-up:active {
+  color: black;
+  background-color: #d85f65;
+  border-color: #d85f65;
+}
+/* Sidebar */
+.sidebar {
+	height: calc(100vh - 70px);
+	width: 200px;
+	background-color: #4d5250;
+	color: #d85f65;
+	font-weight: 300;
+	position: fixed;
+	left: 0px;
+	top: 70px;
+}
+.side-item {
+	padding: 10px 20px 10px 20px;
+  font-weight: 100;
+}
+#first-side-item {
+	margin-top: 25px;
+}
+.side-link, .side-link:visited {
+  color: #d85f65;
+  text-decoration: none;
+  transition: 250ms ease-in-out;
+}
+.side-link:hover, .side-link:active {
+  color: white;
+}
+/* Text Effects */
+.text-center {
+	text-align: center;
+}
+/* Bootstrap */
+.container {
+	width: 80%;
+	margin-left: 10%;
+	margin-top: 100px;
+}
+
+
+
+
+
+
+
+

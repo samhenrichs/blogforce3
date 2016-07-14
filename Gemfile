@@ -16,7 +16,9 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'rails_12factor'
 gem "figaro"
 gem 'devise'
-gem 'paperclip', github: 'thoughtbot/paperclip' 
+gem 'paperclip', github: 'thoughtbot/paperclip'
+gem 'font-awesome-less'
+
 
 group :development, :test do
   gem 'byebug'

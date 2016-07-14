@@ -3,16 +3,25 @@
 		
 	</head>
 	<body>
-		<%= render 'header' %>
+		<div class="container-offers">
 		<div class="first">
+			<% if user_signed_in? %>
+			<% else %>
 			<div class="hero">
-				<h1>Blog Force is the best way to make money with your website, YouTube Channel, or blog. Scroll down to find out why.</h1>
+			<% end %>
+				<h1>Blog Force is the best way to make money with your website, YouTube Channel, or blog.</h1>
 				<div class="line first"></div>
+			<% if user_signed_in? %>
+			<% else %>
 			</div>
+			<% end %>
 		</div>
 		<div class="first">
+			<% if user_signed_in? %>
+			<% else %>
 			<div class="hero">
-				<h1 class="text-center">What you do.</h1>
+			<% end %>
+				<h1 class="text-center first">What you do.</h1>
 				<br>
 				<p class="larger">To make money with Blog Force, you only need to do a couple of things but the main task is what you do best: making content for your readers. Here are the steps: </p>
 				<ol>
@@ -40,9 +49,13 @@
 				<br>
 
 				<h2>Affiliate Links.</h2>
-				<p class="larger">We make the use of  affiliate links to make money for you as well as for us. If you don't know how it works, let me fill you in. Basically, when you advertise a product for a company, you get some of your readers to buy it. When that happens, we get a cut of the sales! It's that easy. Most of these links are from Amazon, but some are from other sources. Basically, we're salesmen, and our salary is all comission.</p>
+				<p class="larger last">We make the use of  affiliate links to make money for you as well as for us. If you don't know how it works, let me fill you in. Basically, when you advertise a product for a company, you get some of your readers to buy it. When that happens, we get a cut of the sales! It's that easy. Most of these links are from Amazon, but some are from other sources. Basically, we're salesmen, and our salary is all comission.</p>
 
 			</div>
 		</div>
+		<% if user_signed_in? %>
+		<% else %>
+		</div>
+		<% end %>
 	</body>
 </html>

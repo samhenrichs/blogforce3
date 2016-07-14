@@ -1,0 +1,15 @@
+<div class="navbar">
+	<div class="brand">
+		<span class="logo">Name here.</span>
+	</div>
+	<div class="right-links">
+		<a href="/pages/home" class="hac">Home</a>
+		<a href="/pages/about" class="hac">About Us</a>
+		<a href="/pages/contact" class="hac">Our Information</a>
+		<% if user_signed_in? %>
+		<% else %>
+		<a href="/users/sign_in" class="links btn-sign-in">Sign In</a>
+		<a href="/users/sign_up" class="links btn-sign-up">Sign Up</a>
+		<% end %>
+	</div>
+</div>

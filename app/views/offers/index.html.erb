@@ -1,8 +1,15 @@
-<%= render 'sidebar' %>
 <div class="container-offers">
   
+  <% if current_user.try(:popup) == false %>
+    <div class="alert alert-dismissible alert-info">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong>Heads up!</strong> This <a href="#" class="alert-link">alert needs your attention</a>, but it's not super important.
+    </div>
+  <% else %>
+
+  <% end %>
   <div class="fifty">
-    <h2>OFFERS</h2>
+    <h2>Start a campaign.</h2>
   </div>
     
     <div class="space"></div>
@@ -13,64 +20,16 @@
         <% else %>
           <div class="offer">
             
-            <div class="offer-header"> 
-              <h3 class="text-center"><%= offer.title %></h3>
-            </div>
-
-            <div class="offer-body">
-              <br>
-              <span class="font black"><%= offer.name %></span>
-              <br>
-              <span class="font black"><%= truncate(offer.description, length: 40) %></span>
-              <br>
-              <span class="font black"><%= offer.url %></span>
-              <br>
-              <span class="font black"><%= offer.product %></span>
-              <br>
-              <span class="font black"><%= offer.place %></span>
-              <br>
-              <% if current_user.try(:email) == "sbhenrichs@gmail.com" || "camblackwell2@gmail.com" %>
-                <%= link_to 'More Info', offer, class: "font" %>&nbsp;&nbsp;
-                <%= link_to 'Update', edit_offer_path(offer), class: "font" %>&nbsp;&nbsp;
-                <%= link_to 'Delete', offer, class: "font", method: :delete, data: { confirm: 'Are you sure?' } %>&nbsp;&nbsp;
-              <% else %>
-                <%= link_to 'More Info', offer, class: "font light" %>
-              <% end %>
-            </div>
-
-            </div>
+          </div>
         <% end %>
       <% else %>
             <div class="offer">
-            
-            <div class="offer-header"> 
-              <h3 class="text-center"><%= offer.title %></h3>
-            </div>
-
-            <div class="offer-body">
+              <h5><%= offer.title %></h5>
               <br>
-              <span class="font black"><%= offer.name %></span>
-              <br>
-              <br>
-              <span class="font black"><%= truncate(offer.description, length: 40) %></span>
-              <br>
-              <br>
-              <span class="font black"><%= truncate(offer.url, length: 30) %></span>
-              <br>
-              <br>
-              <% if current_user.try(:email) == "sbhenrichs@gmail.com" || "camblackwell2@gmail.com" %>
-                <%= link_to 'More Info', offer, class: "font" %>&nbsp;&nbsp;
-                <%= link_to 'Update', edit_offer_path(offer), class: "font" %>&nbsp;&nbsp;
-                <%= link_to 'Delete', offer, class: "font", method: :delete, data: { confirm: 'Are you sure?' } %>&nbsp;&nbsp;
-              <% else %>
-                <%= link_to 'More Info', offer, class: "font light" %>
-              <% end %>
-            </div>
-
+              <h5><%= offer.description %></h5>
             </div>
       <% end %>
     <% end %>
-
 <br>
 <br>
   <div class="space">

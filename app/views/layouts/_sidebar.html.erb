@@ -1,0 +1,23 @@
+<div class="sidebar">
+	<div class="side-item" id="first-side-item">
+		<span class="side-link item-one"><a href="/offers" class="side-link">Start a Campaign</a></span>
+	</div>
+	<div class="side-item">
+		<span><a href="/pushes" class="side-link">Current Campaigns</a></span>
+	</div>
+	<div class="side-item">
+		<span><a href="/pages/profile" class="side-link">My Profile</a></span>
+	</div>
+	<div class="side-item">
+		<span><a href="/users/edit" class="side-link">Edit Profile</a></span>
+	</div>
+	<div class="side-item">
+		<span><%= link_to('Logout', destroy_user_session_path, class: "side-link", :method => :delete) %></span>
+	</div>
+	<div class="side-item">
+		<span class="side-link"></span>
+	</div>
+	<div class="side-item">
+		<span class="side-link"></span>
+	</div>
+</div> 

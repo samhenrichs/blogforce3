@@ -4,7 +4,7 @@ class OffersController < ApplicationController
   # GET /offers
   # GET /offers.json
   def index
-    @offers = Offer.all
+    @offers = Offer.all.order("created_at DESC")
     if user_signed_in?
     else
       redirect_to "/users/sign_in"
