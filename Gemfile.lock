@@ -97,11 +97,6 @@ GEM
     json (1.8.3)
     less (2.6.0)
       commonjs (~> 0.2.7)
-    less-rails (2.7.1)
-      actionpack (>= 4.0)
-      less (~> 2.6.0)
-      sprockets (> 2, < 4)
-      tilt
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.4)
@@ -205,7 +200,6 @@ DEPENDENCIES
   font-awesome-less
   jbuilder (~> 2.0)
   jquery-rails
-  less-rails (~> 2.7, >= 2.7.1)
   paperclip!
   pg (~> 0.15)
   rails (= 4.2.6)
