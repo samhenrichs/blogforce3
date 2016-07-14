@@ -17,7 +17,7 @@ a, a:visited {
 	top: 0;
 	left: 0;
 	position: fixed;
-	background-color: #3c3c3c;
+	background-color: #418fb6;
 }
 .brand {
 	display: inline-block;
@@ -25,7 +25,7 @@ a, a:visited {
 	font-size: 200%;
 	display: inline-block;
 	margin-left: 20px;
-  color: #d85f65;
+  color: white;
   font-weight: 100;
 }
 .right-links {
@@ -80,7 +80,7 @@ a, a:visited {
 .sidebar {
 	height: calc(100vh - 70px);
 	width: 200px;
-	background-color: #4d5250;
+	background-color: #b8b8b8;
 	color: #d85f65;
 	font-weight: 300;
 	position: fixed;
@@ -95,7 +95,7 @@ a, a:visited {
 	margin-top: 25px;
 }
 .side-link, .side-link:visited {
-  color: #d85f65;
+  color: #418fb6;
   text-decoration: none;
   transition: 250ms ease-in-out;
 }
