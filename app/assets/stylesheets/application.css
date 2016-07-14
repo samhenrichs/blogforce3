@@ -17,7 +17,7 @@ a, a:visited {
 	top: 0;
 	left: 0;
 	position: fixed;
-	background-color: #418fb6;
+	background-color: #4f4f4f;
 }
 .brand {
 	display: inline-block;
@@ -25,7 +25,7 @@ a, a:visited {
 	font-size: 200%;
 	display: inline-block;
 	margin-left: 20px;
-  color: white;
+  color: #418fb6;
   font-weight: 100;
 }
 .right-links {
@@ -62,10 +62,10 @@ a, a:visited {
   border-color: white;
 }
 .btn-sign-up {
-  color: #d85f65;
+  color: #418fb6;
   padding: 7.5px 30px 7.5px 30px;
   border-radius: 2.5px;
-  border: 1px solid #d85f65;
+  border: 1px solid #418fb6;
   text-decoration: none;
   margin-left: 25px;
   font-size: 90%;
@@ -73,14 +73,14 @@ a, a:visited {
 }
 .btn-sign-up:hover, .btn-sign-up:active {
   color: black;
-  background-color: #d85f65;
-  border-color: #d85f65;
+  background-color: #418fb6;
+  border-color: #418fb6;
 }
 /* Sidebar */
 .sidebar {
 	height: calc(100vh - 70px);
 	width: 200px;
-	background-color: #b8b8b8;
+	background-color: #656363;
 	color: #d85f65;
 	font-weight: 300;
 	position: fixed;
