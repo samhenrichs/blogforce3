@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
   <link rel="stylesheet" href="custom.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
   <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 </head>
 <body>
@@ -16,13 +16,27 @@
 <% if user_signed_in? %>
 	<style>
 		.container {
-			margin-left: 250px;
-			margin-top: 110px;
-			clear: both;
-			width: calc(100vw - 300px);
+			position: absolute;
+			top: 100px;
+			left: 275px;
+			z-index: -99;
+			width: calc(100vw - 325px);
+
+		}
+		.social-con {
+			margin-left: 15%;
+			margin-right: 15%;
 		}
 	</style>
 <%= render '/layouts/sidebar' %>
+<% else %>
+	<style>
+		.container {
+			margin-top: 125px;
+			width: 85%;
+			margin-left: 7.5%;
+		}
+	</style>
 <% end %>
 <div class="container">
 <%= yield %>

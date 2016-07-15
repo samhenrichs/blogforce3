@@ -1,33 +1,30 @@
-<%= render 'sidebar' %>
-
 <div class="container-offers font black">
 
   <br>
   <h1 class="text-center blue"><%= @offer.name %></h1>
   <br>
-  <div class="larger">
-    <p>
-      <%= @offer.description %>
-    </p>
-    <br>
-    <p>
-      <a href="<%= @offer.url %>" class="blue">View product in Amazon.</a>
-    </p>
-    <br>
-    <% if @offer.product == true %>
-      <p>Want a sample of the product? <a href="/pages/product">Learn more.</a></p>
-    <% end %>
-    <br>
-    <% if current_user.try(:email) == "sbhenrichs@gmail.com" || "camblackwell2@gmail.com" %>
-      <%= link_to 'Edit', edit_offer_path(@offer) %> |
-      <%= link_to 'Back', offers_path %>
-    <% else %>
-      <%= link_to 'Back', offers_path %>
+  <div class="show-image"></div>
+
+  <br>
+
+  <h4><%= @offer.description %></h4>
+  <br>
+  <h4><a href="<%= @offer.url %>" class="link">View product in store.</a></h4>
+  <% if current_user.try(:email) == "sbhenrichs@gmail.com" %>
+    <h4><%= link_to 'Edit', edit_offer_path(@offer), class: "link" %></h4>
+    <h4><%= link_to 'Back', offers_path, class: "link" %></h4>
+  <% else %>
+     <h4><%= link_to 'Back', offers_path, class: "link" %></h4>
+  <% end %>
+  <br>
+  
+  <% if current_user.try(:email) == "sbhenrichs@gmail.com" %>
+  <div class="text-center moreinfo">
+    <%= form_for @offer, method: :delete, :html => { id: "offer" }, :remote => true do |f| %>
+      <%= f.submit :"Delete offer.", class: "offer-delete-submit", class: "btn-danger text-center" %>
     <% end %>
   </div>
-  
-  <%= form_for @offer, method: :delete, :html => { id: "offer" }, :remote => true do |f| %>
-    <%= f.submit :"Delete offer.", class: "offer-delete-submit" %>
+  </div>
   <% end %>
   
     <br>
@@ -38,8 +35,8 @@
     <%= f.hidden_field :date, value: Date.today.to_s %>
     <%= f.hidden_field :url, value: @offer.url %>
     <%= f.hidden_field :owner, value: current_user.try(:email) %>
-    <div class="text-center">
-      <%= f.submit :"Create Campaign", class: "btn btn-info btn-lg" %>
+    <div class="text-center moreinfo">
+      <%= f.submit :"Start Campaign", class: "btn-default text-center" %>
     </div>
   <% end %>
   <br>

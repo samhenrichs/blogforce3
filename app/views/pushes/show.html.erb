@@ -2,19 +2,15 @@
     
     <br>
 
-    <div class="larger">
-      <p>
-        <span class="sans-serif"><%= @push.description %></span>
-      </p>
-      <p>
-        <span class="sans-serif">Owner<% if current_user.email != "sbhenrichs@gmail.com" %> (you):<% else %>:<% end %></span>
-        <span class="sans-serif"><%= current_user.email %></span>
-      </p>
-      <p>
-        <%= link_to 'Back', pushes_path, class: "sans-serif" %>
-      </p>
+    <div class="campaign-image"></div>
+    <div class="campaign-description"><h5><%= @push.description %></h5></div>
+    <br>
+    <div class="campaign-links">
+      <h4>Date Started: <%= @push.date %></h4>
+      <h4><a href="<%= @push.url %>" class="link">View Product in Store</a></h4>
+      <h4>Money Earned: $0</h4>
+      <h4><%= link_to "Back", pushes_path, class: "link" %></h4>
     </div>
-    
-    <div class="btn-danger">
-      <%= link_to "End Campaign", push_path(@push), class: "white", method: :delete, data: { confirm: "When you end a campaign, you will be paid, but you won't recieve any more money from your sales. Are you sure you want to do this?"} %>
+    <div class="moreinfo text-center" id="endcampaign">
+      <%= link_to "End Campaign", push_path(@push), class: "btn-danger", id:"dc", method: :delete, data: { confirm: "When you end a campaign, you will be paid, but you won't recieve any more money from your sales. Are you sure you want to do this?"} %>
     </div>

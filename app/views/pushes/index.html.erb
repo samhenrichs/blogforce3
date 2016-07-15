@@ -1,38 +1,30 @@
 <div class="container-offers">
 <div class="fifty">
-    <h2 class="uppercase">Campaigns</h2>
-    <h4>(<%= current_user.email %>)</h4>
+    <h1 class="text-center blue">Campaigns</h1>
+    <h4 class="text-center">(<%= current_user.email %>)</h4>
 </div>
+<br>
+<br>
 <br>
     <% @pushes.each do |push| %>
       <% if push.owner == current_user.try(:email) || current_user.try(:email) == "sbhenrichs@gmail.com" %>
-        
-        <h3 class="text-center blue"><%= push.name %></h3>
-        <br>
-        <%= truncate(push.description, length: 250) %>
-        <br>
-        <%= push.owner %>
-        <br>
-        <%= push.date %>
-        <br>
-        <%= link_to 'More Info', push %> 
-        <% if current_user.email == "sbhenrichs@gmail.com" %>
-        <span> | </span>
-        <%= link_to 'Edit', edit_push_path(push) %> <span> | </span>
-        <%= link_to 'Destroy', push, method: :delete, data: { confirm: 'Are you sure?' }
-         %> 
-        <% end %>
-        <br>
-        <br>
-
+        <div class="campaign">
+            <div class="image-con">
+                <div class="image"></div>
+            </div>
+            <div class="title">
+                <h4 class="name"><%= link_to push.name, push, class: "link blue" %></h4>
+            </div>
+            <div class="date-con">
+                <h5 class="date">Started: <%= push.date %></h5>
+            </div>
+        </div>
       <% end %>
       
     <% end %>
-
     <br>
     <br>
     <br>
-    <% if current_user.email == "sbhenrichs@gmail.com" %>
-    <%= link_to 'New Push', new_push_path %>
-    <% end %>
+    <br>
+    <br>
 </div>
