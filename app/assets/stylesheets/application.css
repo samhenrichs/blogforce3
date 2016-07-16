@@ -175,13 +175,7 @@ a, a:visited {
     vertical-align: top;
     border: 3px solid #eee;
     border-radius: 10px;
-  }
-  .product-image {
-    width: 50%;
-    height: 200px;
-    margin-left: 25%;
-    border-radius: 50%;
-    border: 5px solid #418fb6;
+    margin-right: 25px;
   }
   .moreinfo {
     width: 100%;
@@ -189,13 +183,21 @@ a, a:visited {
     float: left;
     margin-top: 50px;
   }
-  .show-image {
-    width: 80%;
-    margin-left: 10%;
-    height: 400px;
+  .offer-image {
+    width: 50%;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-left: 25%;
+  }
+  .index-image {
+    height: 200px;
+    width: auto;
+  }
+  .help-box {
     padding: 20px;
-    border: 5px solid #418fb6;
-    border-radius: 5px;
+    width: 100%;
+    background-color: #418fb6;
   }
   .campaign-links {
     float: left;
@@ -258,10 +260,15 @@ a, a:visited {
     width: 49%;
     float: right;
   }
+  .description {
+    margin-top: 50px;
+  }
   #endcampaign {
     margin-bottom: 50px;
   }
-
+  #sc {
+    margin-bottom: 50px;
+  }
 
 /* Text Effects */
 .text-center {
@@ -277,6 +284,12 @@ a, a:visited {
   margin-left: 10%;
   padding: 10px;
   margin-top: 25px;
+}
+.form-group-area {
+  height: 250px;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
 }
 .form-group-small {
   height: 25px;
@@ -300,23 +313,6 @@ a, a:visited {
 }
 *:focus {
     outline: 0 !important;
-  }
-input[type=checkbox] {
-  visibility: hidden;
-}
-.check-box {
-  height: 20px;
-  width: 20px;
-  position: relative;
-}
-#remember label {
-  border: 1px solid #eee;
-  cursor: pointer;
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 20px;
-  width: 20px;
 }
 .btn-default {
   color: #418fb6;
@@ -364,7 +360,9 @@ input[type=checkbox] {
 .link:hover, .link:active {
   border-bottom: 1px solid black;
 }
-
+.hide {
+  visibility: hidden;
+}
 
 
 

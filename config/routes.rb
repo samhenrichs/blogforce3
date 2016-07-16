@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'pages/contact'
   get 'pages/profile'
   get 'pages/help'
+  get 'pages/users'
   root 'pages#home'
   resources :offers
 end

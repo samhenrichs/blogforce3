@@ -1,8 +1,12 @@
 <div class="container-offers">
 
   <h1 class="blue">Start a campaign.</h1>
-    
-    <div class="space"></div>
+  <% if current_user.help == false %>
+    <div class="help-box">
+      <h2>Hi! Welcome to Placeholder. I'm here to help, but some people think I'm pretty annyoing. If that's what you think, you can get rid of me by clicking the X up there. If you do that, you can always get me back by going to the help page.</h2>
+    </div>
+  <% else %>
+  <% end %>
 
     <% @offers.each do |offer| %>
       <% if offer.place == 2 %>
@@ -14,9 +18,11 @@
         <% end %>
       <% else %>
             <div class="offer">
-              <h3 class="text-center"><%= offer.title %></h3>
+              <h3 class="text-center"><%= link_to offer.title, offer, class: "link" %></h3>
               <br>
-              <div class="product-image"></div>
+              <div class="offer-image">
+                <%= image_tag offer.image, class: "index-image" %>
+              </div>
               <br>
               <h4><%= truncate(offer.description, :length => 250) %></h4>
               <br>

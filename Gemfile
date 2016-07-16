@@ -17,9 +17,10 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'rails_12factor'
 gem "figaro"
 gem 'devise'
-gem 'paperclip', github: 'thoughtbot/paperclip'
+gem 'paperclip', '~> 4.3.7'
 gem 'font-awesome-less'
 gem 'therubyracer', :platforms => :ruby
+gem 'paperclip-dropbox', '~> 1.3', '>= 1.3.2'
 
 
 

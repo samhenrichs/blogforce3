@@ -1,23 +1,28 @@
 <div class="sidebar">
 	<div class="side-item" id="first-side-item">
-		<span><a href="/offers" class="side-link"> &nbsp;Start a Campaign</a></span>
+		<span><a href="/offers" class="side-link">Start a Campaign</a></span>
 	</div>
 	<div class="side-item">
-		<span><a href="/pushes" class="side-link"> &nbsp;Current Campaigns</a></span>
+		<span><a href="/pushes" class="side-link">Current Campaigns</a></span>
 	</div>
 	<div class="side-item">
-		<span><a href="/pages/profile" class="side-link"> &nbsp;My Profile</a></span>
+		<span><a href="/pages/profile" class="side-link">My Profile</a></span>
 	</div>
 	<div class="side-item">
-		<span><a href="/users/edit" class="side-link"> &nbsp;Edit Profile</a></span>
+		<span><a href="/users/edit" class="side-link">Edit Profile</a></span>
 	</div>
+	<div class="side-item">
+		<span><a href="/pages/help" class="side-link">Help</a></span>
+	</div>
+	<% if current_user.email == "sbhenrichs@gmail.com" %>
+	<div class="side-item">
+		<span><a href="/pages/users" class="side-link">Users</a></span>
+	</div>
+	<div class="side-item">
+		<span><a href="/offers/new" class="side-link">New Offer</a></span>
+	</div>
+	<% end %>
 	<div class="side-item">
 		<span><%= link_to(' &nbsp;Logout'.html_safe, destroy_user_session_path, class: "side-link", :method => :delete) %></span>
-	</div>
-	<div class="side-item">
-		<span class="side-link"></span>
-	</div>
-	<div class="side-item">
-		<span class="side-link"></span>
 	</div>
 </div> 
