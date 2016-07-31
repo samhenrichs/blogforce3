@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'pages/profile'
   get 'pages/help'
   get 'pages/users'
+  get 'pages/mission'
   root 'pages#home'
   resources :offers
 end

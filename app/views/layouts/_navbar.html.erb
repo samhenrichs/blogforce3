@@ -1,15 +1,88 @@
 <div class="navbar">
-	<div class="brand">
-		<span class="logo">Placeholder.</span>
+	
+	<% if user_signed_in? %>
+		<div class="sandwich">
+			<span class="ion-navicon" id="nav-toggle"></span>
+		</div>
+		<style>
+			.nav-content {
+				margin-left: 15%;
+			}
+		</style>
+		<script>
+			$(document).ready(function() {
+				$('.overlay').hide(000);
+				$('#nav-toggle').click(function() {
+					$('.slideout').animate({left: '0px'}, 'ease-in-out');
+					$('.overlay').fadeIn(100);
+				});
+				$('.close').click(function() {
+					$('.slideout').animate({left: '-301px'}, 'ease-in-out');
+					$('.overlay').fadeOut(100);
+				});
+			});
+		</script>
+		<div class="slideout">
+			<div class="close">
+				<span class="ion-ios-close-empty"></span>
+				<div class="slideout-content">
+					<h4><a href="/offers" class="link">Start a campaign.</a></h4>
+					<h4><a href="/pushes" class="link">Your campaigns.</a></h4>
+					<h4><a href="/users/edit" class="link">Edit Profile</a></h4>
+					<h4><a href="/pages/help" class="link">Help</a></h4>
+					<h4><%= link_to('Logout', destroy_user_session_path, class: "link", :method => :delete) %></h4>
+				</div>
+			</div>
+		</div>
+	<% end %>
+
+	<div class="nav-content">
+
+		<div class="brand">
+			<span class="logo">placeholder</span>
+		</div>
+
+		<div class="right-links">
+			<a class="hac" id="ct">Creators&nbsp;&nbsp;<span class="ion-ios-arrow-down" id="ca"></span></a>
+			<a href="/pages/mission" class="hac">Our Mission</a>
+			<a href="/pages/contact" class="hac">About</a>
+			<a href="/pages/about" class="hac">Contact Us</a>
+			<% if user_signed_in? %>
+			<% else %>
+			<a href="/users/sign_in" class="links btn-sign-in btn-reg">Sign In</a>
+			<a href="/users/sign_up" class="links btn-sign-up btn-reg">Sign Up</a>
+			<% end %>
+		</div>
+
 	</div>
-	<div class="right-links">
-		<a href="/pages/home" class="hac">Home</a>
-		<a href="/pages/about" class="hac">About Us</a>
-		<a href="/pages/contact" class="hac">Our Information</a>
-		<% if user_signed_in? %>
-		<% else %>
-		<a href="/users/sign_in" class="links btn-sign-in">Sign In</a>
-		<a href="/users/sign_up" class="links btn-sign-up">Sign Up</a>
-		<% end %>
-	</div>
+
 </div>
+<div class="cd">
+	<span>Video Creators</span>
+</div>
+<% if user_signed_in? %>
+	<script>
+
+		$(document).ready(function() {
+
+		var position = $('#ct').position();
+		
+		$('.cd').css('left', position.left);
+		
+		
+		$('.cd').hide(000);
+		
+		$('#ct').hover(function() {
+			if($('.cd').is(':visible')) {
+				$('.cd').slideUp(250);
+			}
+			if($('.cd').is(':hidden')) {
+				$('.cd').slideDown(250);
+			}
+		});
+
+		});
+
+
+	</script>
+<% end %>

@@ -9,15 +9,21 @@
     <% @pushes.each do |push| %>
       <% if push.owner == current_user.try(:email) || current_user.try(:email) == "sbhenrichs@gmail.com" %>
         <div class="campaign">
-            <div class="image-con">
-                <div class="image"></div>
+
+            <div class="img-index-post">
+                <div class="img-index-con">
+                    <img src="<%= push.iu %>" alt="" class="img-index">
+                </div>
             </div>
+
             <div class="title">
-                <h4 class="name"><%= link_to push.name, push, class: "link blue" %></h4>
+                <h3 class="name"><%= link_to push.name, push, class: "link blue" %></h3>
             </div>
+
             <div class="date-con">
-                <h5 class="date">Started: <%= push.date %></h5>
+                <h3 class="date">Started: <%= push.date %></h3>
             </div>
+            
         </div>
       <% end %>
       
@@ -27,4 +33,5 @@
     <br>
     <br>
     <br>
+
 </div>

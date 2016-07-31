@@ -1,33 +1,32 @@
-<div class="container-offers">
-
-  <h1 class="blue">Start a campaign.</h1>
-  <% if current_user.help == false %>
-    <div class="help-box">
-      <h2>Hi! Welcome to Placeholder. I'm here to help, but some people think I'm pretty annyoing. If that's what you think, you can get rid of me by clicking the X up there. If you do that, you can always get me back by going to the help page.</h2>
-    </div>
-  <% else %>
-  <% end %>
-
+<h1 class="blue text-center" id="sac">Start a campaign.</h1>
     <% @offers.each do |offer| %>
       <% if offer.place == 2 %>
         <% if Offer.where(name: offer.name).count >= 2 %>
-        <% else %>
-          <div class="offer">
-            
-          </div>
         <% end %>
       <% else %>
             <div class="offer">
-              <h3 class="text-center"><%= link_to offer.title, offer, class: "link" %></h3>
+              <h3 class="text-center"><%= link_to offer.title, offer, class: "title-link" %></h3>
               <br>
-              <div class="offer-image">
-                <%= image_tag offer.image, class: "index-image" %>
+              <div class="img-con-index">
+                <img src="<%= offer.iu %>" alt="">
               </div>
+              <style>
+                img {
+                  max-height: 200px;
+                }
+                .img-con-index {
+                  height: 200px;
+                  width: 100%;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                }
+              </style>
               <br>
               <h4><%= truncate(offer.description, :length => 250) %></h4>
               <br>
               <div class="moreinfo">
-                <h4><%= link_to 'More Info', offer, class: "text-center btn-default" %></h4>
+                <h4><%= link_to 'More Info', offer, class: "text-center btn-default btn-reg" %></h4>
               </div>
             </div>
       <% end %>
@@ -36,7 +35,9 @@
 <br>
   <div class="space">
     <% if current_user.email == "sbhenrichs@gmail.com" %>
-      <div class="new-offer"><%= link_to 'New Offer', new_offer_path, class: "btn-default" %></div>
+      <div class="btn-center">
+        <div class="new-offer"><%= link_to 'New Offer', new_offer_path, class: "btn-default btn-lg" %></div>
+      </div>
       <br>
       <br>
     <% else %>

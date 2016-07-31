@@ -69,6 +69,6 @@ class PushesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def push_params
-      params.require(:push).permit(:name, :description, :url, :owner, :date, :image)
+      params.require(:push).permit(:name, :description, :url, :owner, :date, :iu)
     end
 end

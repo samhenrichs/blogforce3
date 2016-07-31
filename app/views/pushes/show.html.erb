@@ -1,10 +1,13 @@
     <h1 class="text-center blue"><%= @push.name %></h1>
-    
-    <br>
 
-    <div class="campaign-image"></div>
-    <div class="campaign-description"><h5><%= @push.description %></h5></div>
-    <br>
+    <div class="information-show">
+      <div class="show-image-con">
+        <img src="<%= @push.iu %>" alt="" class="push-img">
+      </div>
+
+      <div class="campaign-description"><h5><%= @push.description %></h5></div>
+    </div>
+
     <div class="campaign-links">
       <h4>Date Started: <%= @push.date %></h4>
       <h4><a href="<%= @push.url %>" class="link">View Product in Store</a></h4>
@@ -12,5 +15,5 @@
       <h4><%= link_to "Back", pushes_path, class: "link" %></h4>
     </div>
     <div class="moreinfo text-center" id="endcampaign">
-      <%= link_to "End Campaign", push_path(@push), class: "btn-danger", id:"dc", method: :delete, data: { confirm: "When you end a campaign, you will be paid, but you won't recieve any more money from your sales. Are you sure you want to do this?"} %>
+      <%= link_to "End Campaign", push_path(@push), class: "btn-danger btn-lg", id:"dc", method: :delete, data: { confirm: "When you end a campaign, you will be paid, but you won't recieve any more money from your sales. Are you sure you want to do this?"} %>
     </div>
