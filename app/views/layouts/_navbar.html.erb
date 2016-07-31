@@ -27,10 +27,11 @@
 				<span class="ion-ios-close-empty"></span>
 				<div class="slideout-content">
 					<h4><a href="/offers" class="link">Start a campaign.</a></h4>
-					<h4><a href="/pushes" class="link">Your campaigns.</a></h4>
-					<h4><a href="/users/edit" class="link">Edit Profile</a></h4>
-					<h4><a href="/pages/help" class="link">Help</a></h4>
-					<h4><%= link_to('Logout', destroy_user_session_path, class: "link", :method => :delete) %></h4>
+					<h4><a href="/pushes" class="link">My campaigns.</a></h4>
+					<h4><a href="/pages/profile" class="link">My profile.</a></h4>
+					<h4><a href="/users/edit" class="link">Edit profile.</a></h4>
+					<h4><a href="/pages/help" class="link">Help.</a></h4>
+					<h4><%= link_to('Logout.', destroy_user_session_path, class: "link", :method => :delete) %></h4>
 				</div>
 			</div>
 		</div>
@@ -72,7 +73,7 @@
 		
 		$('.cd').hide(000);
 		
-		$('#ct').hover(function() {
+		$('#ct').click(function() {
 			if($('.cd').is(':visible')) {
 				$('.cd').slideUp(250);
 			}

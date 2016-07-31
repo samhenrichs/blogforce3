@@ -5,6 +5,7 @@
 	<body>
 		<h1 class="text-center blue">Your Account</h1>
 		<br>
+		<h4>Name: <%= current_user.try(:firstname) %> <%= current_user.try(:lastname) %></h4>
 		<h4>Email: <%= current_user.try(:email) %></h4>
 		<h4>Website: <a href="<%= current_user.url %>" class="link"><%= current_user.url %></a></h4>
 		<h4><a href="/pushes" class="link">Campaigns: </h4>

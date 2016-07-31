@@ -1,6 +1,7 @@
 /* Universal */
 * {
 	font-family: "Lato", helvetica neue, sans-serif;
+  -webkit-appearance: none;
 }
 h1, h2 , h3, h4 , h5, h6 {
 	font-weight: 300;
@@ -70,6 +71,7 @@ a, a:visited {
   background: white;
   border-right: 1px solid #eee;
   z-index: 500;
+  font-weight: lighter;
 }
 .close {
   position: absolute;
@@ -115,11 +117,12 @@ a, a:visited {
   margin-left: 25px;
   font-size: 90%;
   text-transform: uppercase;
+  transition: 250ms ease-in-out;
 }
 .btn-sign-in:hover, .btn-sign-in:active {
-  color: black;
-  background-color: white;
-  border-color: white;
+  color: white;
+  background-color: #949494;
+  border-color: #949494;
 }
 .btn-sign-up {
   color: #33bf90;
@@ -149,11 +152,8 @@ a, a:visited {
   z-index: 1000;
   background: white;
   top: 70px;
-  display: block;
-  font-weight: lighter;
-}
-#ct:hover .cd {
-  display: block;
+  display: none;
+  font-weight: 300;
 }
 /* Sidebar */
 .sidebar {
